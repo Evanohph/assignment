@@ -1,0 +1,43 @@
+// program to calculate fine in library books
+/* 
+Name: Evans 
+ID: 41406591
+*/
+#include <stdio.h>
+
+int main() {
+    int bookID, dueDate, returnDate, daysOverdue;
+    float fineAmount = 0.0;
+
+    // Prompt user for inputs
+    printf("Enter Book ID: ");
+    scanf("%d", &bookID);
+    printf("Enter Due Date (day of month): ");
+    scanf("%d", &dueDate);
+    printf("Enter Return Date (day of month): ");
+    scanf("%d", &returnDate);
+
+    // Calculate days overdue
+    daysOverdue = returnDate - dueDate;
+
+    // Determine fine rate and calculate fine amount
+    if (daysOverdue <= 0) {
+        fineAmount = 0.0; // No fine for books returned on or before due date
+    } else if (daysOverdue <= 7) {
+        fineAmount = daysOverdue * 20; // Ksh. 20 per day
+    } else if (daysOverdue <= 14) {
+        fineAmount = 7 * 20 + (daysOverdue - 7) * 50; // Ksh. 20 for first 7 days, then Ksh. 50
+    } else {
+        fineAmount = 7 * 20 + 7 * 50 + (daysOverdue - 14) * 100; // Ksh. 20 for first 7, Ksh. 50 for next 7, Ksh. 100 thereafter
+    }
+
+    // Display results
+    printf("\nBook ID: %d\n", bookID);
+    printf("Due Date: %d\n", dueDate);
+    printf("Return Date: %d\n", returnDate);
+    printf("Days Overdue: %d\n", daysOverdue);
+    printf("Fine Rate: Ksh. %.2f\n", fineAmount / (daysOverdue > 0 ? daysOverdue : 1)); // Avoid division by zero
+    printf("Fine Amount: Ksh. %.2f\n", fineAmount);
+
+    return 0;
+}
