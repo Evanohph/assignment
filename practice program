@@ -1,0 +1,41 @@
+// program
+/*
+Auther : Evans
+Reg No. : CT102/G/21954/24
+Date : 21/09/2024
+*/
+//preprocessor directive - printf(), scanf()
+#include <stdio.h>
+int main() {
+    //declaration and initialiation
+    char a;
+    char Name[] ={};
+    int age;
+    float salary;
+    
+    
+    
+    printf("Enter a character:");
+    scanf("%c",&a);
+    printf("The character is \t %c \n",a);
+    
+    printf("Enter the name:");
+    scanf("%s",&Name);
+    printf("The character is %s \n",Name);
+    
+    printf ("Enter the integer:");
+    scanf("%d",&age);
+    printf("The integer is %d \n",age);
+    
+    printf("Enter the floating:");
+    scanf("%f",&salary);
+    printf("The floating is %f",salary);
+    
+    
+    
+    
+    
+    
+    
+    return 0;
+}
