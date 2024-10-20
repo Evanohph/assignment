@@ -1,0 +1,28 @@
+//structure promting the user to enter
+#include <stdio.h>
+#include <string.h>
+ struct book{
+	char title[30];
+	char auther[20];
+	int Publicationyear;
+	char ISBN[13];
+	float price; 
+	 
+}book;
+
+int main(){
+    struct boook;
+	printf("Enter the title:");
+	scanf("%s",&book.title);
+	printf("Enter the auther:");
+	scanf("%s",&book.auther);
+	printf("Enter the publication year:");
+	scanf("%d",&book.Publicationyear);
+	printf("Enter the ISBN:");
+	scanf("%s",&book.ISBN);
+	printf("Enter the price:");
+	scanf("%.2f",&book.price);
+
+	
+		return 0;
+}
